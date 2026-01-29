@@ -314,20 +314,7 @@ function EventCard({ event }: { event: Event }) {
         </div>
       </motion.div>
 
-      {/* GLOBAL STYLES */}
-      <style jsx global>{`
-        @media (min-width: 768px) {
-          .backface-hidden {
-            backface-visibility: visible !important;
-            transform: none !important;
-            position: relative !important;
-          }
-        }
-
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-      `}</style>
+      
     </div>
   );
 }
