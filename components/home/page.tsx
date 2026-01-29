@@ -15,14 +15,19 @@ export default function HomePage() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const HEADER_HEIGHT = 80;
+
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    el.scrollIntoView({
+    const y = el.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT;
+
+    window.scrollTo({
+      top: y,
       behavior: "smooth",
-      block: "start",
     });
+
     setActiveSection(id);
     setIsMobileMenuOpen(false);
   };
@@ -67,7 +72,6 @@ export default function HomePage() {
             />
           </div>
 
-
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -95,10 +99,7 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="relative w-full">
-        <section
-          id="home"
-          className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] overflow-hidden"
-        >
+        <section className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/pics/Home.png"
@@ -135,7 +136,9 @@ export default function HomePage() {
 
           {/* Mobile Navigation Dropdown */}
           <div
-            className={`lg:hidden fixed top-[112px] right-0 h-[calc(100vh-72px)] w-64 bg-white shadow-xl z-40 transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+            className={`lg:hidden fixed top-25 right-0 h-[calc(100vh-80px)] w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out ${
+              isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
             <nav className="max-h-[calc(100vh-80px)] overflow-y-auto">
               <ul className="flex flex-col">
@@ -149,7 +152,7 @@ export default function HomePage() {
                           : "text-gray-700 border-transparent hover:bg-gray-50"
                       }`}
                     >
-                     <span>{item.label}</span>
+                      <span>{item.label}</span>
                     </button>
                   </li>
                 ))}
@@ -157,12 +160,13 @@ export default function HomePage() {
             </nav>
           </div>
         </section>
-        {isMobileMenuOpen && (
-          <div
-            className="fixed inset-0 bg-black/20 z-[90] lg:hidden"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-        )}
+       {isMobileMenuOpen && (
+  <div
+    className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+    onClick={() => setIsMobileMenuOpen(false)}
+  />
+)}
+
       </main>
     </div>
   );

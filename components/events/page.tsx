@@ -126,13 +126,11 @@
 // }
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Youtube, FileText, RotateCw } from "lucide-react";
-import { motion } from "framer-motion";
-/* =======================
-   TYPE DEFINITIONS
-======================= */
+import { Youtube, FileText } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
 type Event = {
   id: number;
   speaker: string;
@@ -144,16 +142,12 @@ type Event = {
   video: string;
 };
 
-/* =======================
-   PAGE COMPONENT
-======================= */
 export default function EventsPage() {
   const events: Event[] = [
     {
       id: 1,
       speaker: "Dr. Kiran Seth, Founder of SPIC MCAY and Eminent Scholar",
-      title:
-        "Save the Tiger and maybe the Rudra Veena: Indian Knowledge System in Modern Contexts.",
+      title: "Save the Tiger and maybe the Rudra Veena: Indian Knowledge System in Modern Contexts.",
       series: "The VIMARSH Institute Public Lectures series at IIT Indore",
       date: "16th January 2025",
       image: "/ForWebpage/spicmacay.png",
@@ -193,8 +187,7 @@ export default function EventsPage() {
     {
       id: 5,
       speaker: "Prof. Indranil Manna, Vice Chancellor, BIT Mesra",
-      title:
-        "Science–Engineering–Technology Synergy Needed for Technological Self-Reliance",
+      title: "Science–Engineering–Technology Synergy Needed for Technological Self-Reliance",
       series: "The VIMARSH Institute Public Lectures series at IIT Indore",
       date: "20th March 2023",
       image: "/ForWebpage/I.Manna/Lecture_poster.jpg",
@@ -222,30 +215,41 @@ export default function EventsPage() {
 
 function EventCard({ event }: { event: Event }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size to disable flip on desktop
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
-    <div className="group perspective-1000 h-[500px] md:h-auto">
+    <div className="relative w-full [perspective:1000px] h-[550px] md:h-auto">
       <motion.div
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        animate={{ rotateY: isMobile && isFlipped ? 180 : 0 }}
         transition={{
           duration: 0.6,
           type: "spring",
           stiffness: 260,
           damping: 20,
         }}
-        style={{ transformStyle: "preserve-3d" }}
-        className="relative w-full h-full md:flex md:flex-row md:items-center md:gap-10 md:bg-white md:rounded-xl md:shadow-md md:border md:p-8 md:!rotate-y-0"
+        className="relative w-full h-full md:flex md:flex-row md:items-stretch md:gap-10 md:bg-white md:rounded-xl md:shadow-md md:border md:p-8 [transform-style:preserve-3d]"
       >
+        {/* FRONT SIDE (Poster) */}
         <div
-          className="absolute inset-0 backface-hidden md:relative md:inset-auto md:w-72 md:h-72 flex flex-col bg-white rounded-xl shadow-lg border overflow-hidden"
-          style={{ backfaceVisibility: "hidden" }}
+          className="absolute inset-0 w-full h-full md:relative md:w-72 md:h-72 flex flex-col bg-white rounded-xl shadow-lg border overflow-hidden [backface-visibility:hidden]"
         >
-          <div className="relative flex-grow w-full h-full">
+          <div className="relative flex-grow w-full min-h-[300px] md:min-h-0">
             <Image
               src={event.image}
               alt={event.speaker}
               fill
               className="object-contain p-2"
+              sizes="(max-width: 768px) 100vw, 288px"
             />
           </div>
           {/* Mobile Flip Button */}
@@ -257,46 +261,57 @@ function EventCard({ event }: { event: Event }) {
           </button>
         </div>
 
+        {/* BACK SIDE (Details) */}
         <div
-          className="absolute inset-0 backface-hidden md:relative md:inset-auto md:flex-grow flex flex-col justify-center p-8 bg-white rounded-xl border-2 border-black md:border-none md:p-0"
-          style={{
-            backfaceVisibility: "hidden",
-            transform: "rotateY(180deg)",
-          }}
+          className={`absolute inset-0 w-full h-full md:relative md:flex-grow flex flex-col justify-center p-8 bg-white rounded-xl border-2 border-black md:border-none md:p-0 [backface-visibility:hidden]
+          ${isMobile ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}`}
         >
-          <div className="md:[transform:rotateY(0deg!important)] h-full flex flex-col justify-center">
+          <div className="h-full flex flex-col justify-center">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
               {event.speaker}
             </h2>
-            <p className="text-gray-800 mt-2 italic">{event.title}</p>
-            {/* <p className="text-sm text-gray-400 mt-4 uppercase tracking-wider">{event.series}</p> */}
-            <p className="text-lg text-blue-600 font-bold mt-2">{event.date}</p>
+            <p className="text-gray-700 mt-3 text-lg leading-relaxed italic border-l-4 border-blue-500 pl-4">
+              {event.title}
+            </p>
+            <p className="text-sm text-gray-500 mt-4 uppercase tracking-wider font-semibold">
+              {event.series}
+            </p>
+            <p className="text-xl text-blue-600 font-black mt-2">
+              {event.date}
+            </p>
 
-            <div className="flex items-center gap-4 mt-8">
-              <span className="font-bold text-lg text-black uppercase text-lg">
-                Watch :{" "}
+            <div className="flex items-center gap-6 mt-8">
+              <span className="font-bold text-lg text-black uppercase">
+                Resources:
               </span>
-              <a
-                href={event.video}
-                target="_blank"
-                className="p-2 bg-red-400 text-white rounded-full hover:scale-110 transition-transform"
-              >
-                <Youtube className="w-6 h-5" />
-              </a>
-              <a
-                href={event.pdf}
-                target="_blank"
-                className="p-2 border-2 border-black text-gray-500 rounded-full hover:bg-black hover:text-white transition-colors"
-              >
-                <FileText className="w-5 h-5" />
-              </a>
+              <div className="flex gap-4">
+                <a
+                  href={event.video}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center p-3 bg-red-500 text-white rounded-full hover:scale-110 transition-transform shadow-md"
+                  title="Watch Video"
+                >
+                  <Youtube className="w-6 h-6" />
+                </a>
+                <a
+                  href={event.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center p-3 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-all shadow-sm"
+                  title="Download PDF/Flyer"
+                >
+                  <FileText className="w-6 h-6" />
+                </a>
+              </div>
             </div>
 
+            {/* Back to Poster Button (Mobile Only) */}
             <button
               onClick={() => setIsFlipped(false)}
-              className="md:hidden mt-8 text-m text-black font-bold underline flex items-center gap-1"
+              className="md:hidden mt-auto pt-8 text-black font-bold underline flex items-center justify-center gap-2"
             >
-              Back to Poster
+              ← Back to Poster
             </button>
           </div>
         </div>
