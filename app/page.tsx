@@ -6,7 +6,6 @@ import TeamPage from "@/components/Team/page";
 import DepartmentalOutreachPage from "@/components/departmental-outreach/page";
 
 
-
 export default function Home() {
   return (
     <main className="w-full min-h-screen bg-gray-100">
@@ -15,6 +14,7 @@ export default function Home() {
         <HomePage />
       </section>
 
+{/* <HomePageImage/> */}
       {/* ABOUT */}
       <section id="about">
         <AboutSection />

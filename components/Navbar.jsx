@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   { label: "Home", id: "home" },
@@ -10,7 +10,7 @@ const navItems = [
   { label: "Departmental Outreach", id: "outreach" },
 ];
 
-export default function Navbar() {
+export default function HomePageImage() {
   const handleScroll = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -22,20 +22,34 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative z-20 py-6 px-4">
-      <ul className="flex justify-start items-center gap-10 text-lg font-medium text-black">
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <button
-              onClick={() => handleScroll(item.id)}
-              className="cursor-pointer hover:text-blue-800 hover:underline underline-offset-4 transition-colors"
+    <section
+      id="home"
+      className="relative left-0 w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:min-h-screen"
+    >
 
-            >
-              {item.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+
+      {/* Sidebar Navigation */}
+      <div className="absolute left-0 top-0 h-full z-20 w-64 overflow-y-auto">
+        <nav className="bg-white shadow-lg h-full">
+
+
+          {/* Navigation Items */}
+          <ul className="flex flex-col">
+            {navItems.map((item, index) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => handleScroll(item.id)}
+                  className="w-full text-left px-4 py-3 text-blue-900 font-medium bg-gray-200 hover:bg-blue-300 cursor-pointer border-b-2 border-white transition-colors duration-200"
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+
+    </section>
   );
 }
