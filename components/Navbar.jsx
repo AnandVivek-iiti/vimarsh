@@ -22,13 +22,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative z-20 py-4 px-8">
-      <ul className="flex justify-center items-center gap-10 text-lg font-medium text-black">
+    <nav className="relative z-20 py-6 px-4">
+      <ul className="flex justify-start items-center gap-10 text-lg font-medium text-black">
         {navItems.map((item) => (
           <li key={item.id}>
             <button
               onClick={() => handleScroll(item.id)}
-              className="hover:text-blue-800 transition-colors"
+              className="cursor-pointer hover:text-blue-800 hover:underline underline-offset-4 transition-colors"
+
             >
               {item.label}
             </button>

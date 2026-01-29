@@ -13,7 +13,7 @@ export default function AboutSection() {
         </h2>
 
         {/* Description */}
-        <p className="text-sm text-gray-800 leading-relaxed max-w-5xl mb-14">
+        <p className="text-m text-gray-800 leading-relaxed max-w-5xl mb-14">
           The Academic Outreach Initiatives at IIT Indore are designed to foster
           impactful associations with the academic community and society,
           promoting knowledge exchange and social responsibility. These
@@ -45,7 +45,7 @@ export default function AboutSection() {
 
           {/* Note from Director */}
           <div className="bg-white rounded-xl shadow-md p-8">
-            <h3 className="text-xl font-medium text-gray-900 mb-4">
+            <h3 className="text-2xl font-medium text-gray-900 mb-4">
               A note from Director&apos;s Desk
             </h3>
 

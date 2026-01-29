@@ -1,3 +1,4 @@
+import { Linkedin, Mail, Globe } from "lucide-react";
 import Image from "next/image";
 
 const teamMembers = [
@@ -53,27 +54,38 @@ export default function TeamPage() {
                 className="mx-auto rounded-md object-cover"
               />
 
-              <h3 className="mt-4 font-medium text-gray-900">
-                {member.name}
-              </h3>
+              <h3 className="mt-4 font-medium text-gray-900">{member.name}</h3>
 
-              <p className="text-sm text-gray-600">
-                {member.role}
-              </p>
+              <p className="text-sm text-gray-600">{member.role}</p>
 
-              <p className="text-xs text-gray-500 mt-2">
-                {member.dept}
-              </p>
+              <p className="text-xs text-gray-500 mt-2">{member.dept}</p>
 
-              <p className="text-xs text-gray-600 mt-3">
-                Contact:{" "}
+            
+
+              {/* Social Icons */}
+              <div className="flex justify-center gap-3 mt-4">
+                <a
+                  href="#"
+                  className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="#"
+                  className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
+                  aria-label="Website"
+                >
+                  <Globe className="w-4 h-4 text-white" />
+                </a>
                 <a
                   href={`mailto:${member.email}`}
-                  className="text-blue-600 hover:underline"
+                  className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
+                  aria-label="Email"
                 >
-                  {member.email}
+                  <Mail className="w-4 h-4 text-white" />
                 </a>
-              </p>
+              </div>
             </div>
           ))}
         </div>
