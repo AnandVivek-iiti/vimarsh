@@ -136,7 +136,7 @@ export default function HomePage() {
 
           {/* Mobile Navigation Dropdown */}
           <div
-            className={`lg:hidden fixed top-28 right-0 h-[calc(100vh-80px)] w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out ${
+            className={`lg:hidden fixed top-25 right-0 h-[calc(100vh-80px)] w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
