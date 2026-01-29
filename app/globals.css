@@ -41,14 +41,3 @@ body {
 .animate-fade-in {
   animation: fade-in 1s ease-out;
 }
- @media (min-width: 768px) {
-          .backface-hidden {
-            backface-visibility: visible !important;
-            transform: none !important;
-            position: relative !important;
-          }
-        }
-
-        .perspective-1000 {
-          perspective: 1000px;
-        }
