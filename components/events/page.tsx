@@ -123,16 +123,32 @@
 //       </div>
 //     </main>
 //   );
-// }
-"use client";
+// }"use client";
 
 import { useState } from "react";
 import Image from "next/image";
-import { Youtube, FileText, RotateCw } from "lucide-react";
+import { Youtube, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
+/* =======================
+   TYPE DEFINITIONS
+======================= */
+type Event = {
+  id: number;
+  speaker: string;
+  title: string;
+  series: string;
+  date: string;
+  image: string;
+  pdf: string;
+  video: string;
+};
+
+/* =======================
+   PAGE COMPONENT
+======================= */
 export default function EventsPage() {
-   const events = [
+  const events: Event[] = [
     {
       id: 1,
       speaker: "Dr. Kiran Seth, Founder of SPIC MCAY and Eminent Scholar",
@@ -187,11 +203,12 @@ export default function EventsPage() {
     },
   ];
 
-
   return (
     <main className="bg-gray-50 min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-10 text-gray-900 text-center md:text-left">Events</h1>
+        <h1 className="text-4xl font-bold mb-10 text-gray-900 text-center md:text-left">
+          Events
+        </h1>
 
         <div className="grid grid-cols-1 gap-8">
           {events.map((event) => (
@@ -203,19 +220,26 @@ export default function EventsPage() {
   );
 }
 
-function EventCard({ event }) {
+/* =======================
+   EVENT CARD COMPONENT
+======================= */
+function EventCard({ event }: { event: Event }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <div className="group perspective-1000 h-[500px] md:h-auto">
-
       <motion.div
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
+        transition={{
+          duration: 0.6,
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
         style={{ transformStyle: "preserve-3d" }}
         className="relative w-full h-full md:flex md:flex-row md:items-center md:gap-10 md:bg-white md:rounded-xl md:shadow-md md:border md:p-8 md:!rotate-y-0"
       >
-
+        {/* FRONT SIDE */}
         <div
           className="absolute inset-0 backface-hidden md:relative md:inset-auto md:w-72 md:h-72 flex flex-col bg-white rounded-xl shadow-lg border overflow-hidden"
           style={{ backfaceVisibility: "hidden" }}
@@ -228,7 +252,7 @@ function EventCard({ event }) {
               className="object-contain p-2"
             />
           </div>
-          {/* Mobile Flip Button */}
+
           <button
             onClick={() => setIsFlipped(true)}
             className="md:hidden bg-black text-white py-4 flex items-center justify-center gap-2 font-medium"
@@ -237,6 +261,7 @@ function EventCard({ event }) {
           </button>
         </div>
 
+        {/* BACK SIDE */}
         <div
           className="absolute inset-0 backface-hidden md:relative md:inset-auto md:flex-grow flex flex-col justify-center p-8 bg-white rounded-xl border-2 border-black md:border-none md:p-0"
           style={{
@@ -248,23 +273,40 @@ function EventCard({ event }) {
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
               {event.speaker}
             </h2>
-            <p className="text-gray-800 mt-2 italic">"{event.title}"</p>
-            {/* <p className="text-sm text-gray-400 mt-4 uppercase tracking-wider">{event.series}</p> */}
-            <p className="text-lg text-blue-600 font-bold mt-2">{event.date}</p>
+
+            <p className="text-gray-800 mt-2 italic">
+              {event.title}
+            </p>
+
+            <p className="text-lg text-blue-600 font-bold mt-2">
+              {event.date}
+            </p>
 
             <div className="flex items-center gap-4 mt-8">
-              <span className="font-bold text-lg text-black uppercase text-lg">Watch : </span>
-              <a href={event.video} target="_blank" className="p-2 bg-red-400 text-white rounded-full hover:scale-110 transition-transform">
+              <span className="font-bold text-lg text-black uppercase">
+                Watch :
+              </span>
+
+              <a
+                href={event.video}
+                target="_blank"
+                className="p-2 bg-red-500 text-white rounded-full hover:scale-110 transition-transform"
+              >
                 <Youtube className="w-6 h-5" />
               </a>
-              <a href={event.pdf} target="_blank" className="p-2 border-2 border-black text-gray-500 rounded-full hover:bg-black hover:text-white transition-colors">
+
+              <a
+                href={event.pdf}
+                target="_blank"
+                className="p-2 border-2 border-black text-gray-500 rounded-full hover:bg-black hover:text-white transition-colors"
+              >
                 <FileText className="w-5 h-5" />
               </a>
             </div>
 
             <button
               onClick={() => setIsFlipped(false)}
-              className="md:hidden mt-8 text-m text-black font-bold underline flex items-center gap-1"
+              className="md:hidden mt-8 text-m text-black font-bold underline"
             >
               Back to Poster
             </button>
@@ -272,6 +314,7 @@ function EventCard({ event }) {
         </div>
       </motion.div>
 
+      {/* GLOBAL STYLES */}
       <style jsx global>{`
         @media (min-width: 768px) {
           .backface-hidden {
@@ -280,6 +323,7 @@ function EventCard({ event }) {
             position: relative !important;
           }
         }
+
         .perspective-1000 {
           perspective: 1000px;
         }
