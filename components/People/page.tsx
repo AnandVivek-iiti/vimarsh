@@ -21,7 +21,7 @@ const teamMembers = [
     role: "Member",
     dept: "Assistant Professor, Humanities and Social Sciences",
     email: "kcpradhan@iiti.ac.in",
-    image: "/pics/People/Kalandi.png",
+    image: "/pics/People/kalandi.png",
   },
   {
     name: "DR Administration",
