@@ -52,7 +52,7 @@ export default function HomePage() {
           {/* Title */}
           <div className="flex-grow text-left px-2 sm:px-4">
             <h1 className="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold text-gray-900 leading-tight tracking-tight">
-              Institute Seminars and Outreach Committee
+              Institute Seminars and Outreach 
             </h1>
             <div className="h-0.5 bg-black w-full max-w-md my-2" />{" "}
             <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
