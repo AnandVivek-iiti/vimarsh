@@ -158,7 +158,7 @@ export default function Footer() {
         </p>
 
         <p className="text-sm text-gray-500 text-center sm:text-right">
-          ©2026  Outreach Cell, IIT Indore. All rights
+          © 2026  Outreach Cell, IIT Indore. All rights
           reserved.
         </p>
       </motion.div>
