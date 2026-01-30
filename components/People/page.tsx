@@ -54,11 +54,11 @@ export default function TeamPage() {
                 className="mx-auto rounded-md object-cover"
               />
 
-              <h3 className="mt-4 font-medium text-lg text-gray-900">{member.name}</h3>
+              <h3 className="mt-4 font-semibold text-lg text-gray-900">{member.name}</h3>
 
               <p className="text-m text-gray-600">{member.role}</p>
 
-              <p className="text-xs text-gray-500 mt-2">{member.dept}</p>
+              <p className="text-s text-gray-500 mt-2">{member.dept}</p>
 
 
 
