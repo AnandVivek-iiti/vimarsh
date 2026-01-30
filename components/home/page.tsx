@@ -60,6 +60,9 @@ export default function HomePage() {
             </p>
           </div>
 
+          
+
+
           {/* Right Logo */}
           <div className="flex-shrink-0">
             <Image

@@ -147,6 +147,7 @@ function EventCard({ event }: { event: Event }) {
           </button>
         </div>
 
+
         {/* BACK SIDE (Details) */}
         <div
           className={`absolute inset-0 w-full h-full md:relative md:flex-grow flex flex-col justify-center p-8 bg-white rounded-xl border-2 border-black md:border-none md:p-0 [backface-visibility:hidden]
