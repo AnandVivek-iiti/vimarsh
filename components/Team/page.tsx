@@ -19,7 +19,6 @@ export default function TeamPage() {
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center transform hover:-translate-y-2"
             >
-              {/* Profile Image with gradient border */}
               <div className="relative mb-6">
                 <div className="w-55 h-60 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white">

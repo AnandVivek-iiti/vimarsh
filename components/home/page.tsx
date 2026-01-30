@@ -102,7 +102,7 @@ export default function HomePage() {
         <section className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/pics/Home2.png"
+              src="/pics/Home.png"
               alt="IIT Indore Abhinandan Bhavan"
               fill
               priority
