@@ -15,7 +15,7 @@ const teamMembers = [
     email: "me240003006@iiti.ac.in",
     linkedin: "https://www.linkedin.com/in/anandvivek1223/",
     instagram: "https://www.instagram.com/anandvivek1223/",
-    image: "/pics/Team/Anand-Vivek.jpg",
+    image: "/pics/Team/AnandVivek.jpg",
   },
   {
     name: "Shruti Turare",
