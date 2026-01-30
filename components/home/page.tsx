@@ -52,7 +52,7 @@ export default function HomePage() {
           {/* Title */}
           <div className="flex-grow text-left px-2 sm:px-4">
             <h1 className="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold text-gray-900 leading-tight tracking-tight">
-              Institute Seminars and Outreach Committee
+              Institute Seminars and Outreach
             </h1>
             <div className="h-0.5 bg-black w-full max-w-md my-2" />{" "}
             <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
@@ -148,7 +148,7 @@ export default function HomePage() {
                       onClick={() => handleScroll(item.id)}
                       className={`w-full text-left px-6 py-4 cursor-pointer font-semibold transition-all duration-200 border-l-4 ${
                         activeSection === item.id
-                          ? "bg-blue-50 text-blue-700 cursor-pointer border-blue-600"
+                          ? "bg-blue-50 text-blue-700 text-lg cursor-pointer border-blue-600"
                           : "text-gray-700 border-transparent hover:bg-gray-50"
                       }`}
                     >

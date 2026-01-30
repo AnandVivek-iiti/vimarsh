@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: "Prof. Raghunath Sahoo",
     role: "Convenor",
-    dept: "Professor, Department of Physics",
+    dept: "Institute Chair Professor, Department of Physics",
     email: "raghunath@iiti.ac.in",
     image: "/pics/People/Raghunath.png",
   },
@@ -19,16 +19,16 @@ const teamMembers = [
   {
     name: "Dr. Kalandi C Pradhan",
     role: "Member",
-    dept: "Assistant Professor, Humanities and Social Sciences",
+    dept: "Assistant Professor, School of Humanities and Social Sciences",
     email: "kcpradhan@iiti.ac.in",
     image: "/pics/People/kalandi.png",
   },
   {
-    name: "DR Administration",
+    name: " Mr. Tanmay Harsh Vaishnav (AR Administration)",
     role: "Member",
     dept: "Outreach Office",
-    email: "outreach@iiti.ac.in",
-    image: "/pics/placeholder.png",
+    email: "aradmin[at]iiti.ac.in",
+    image: "/pics/People/Tanmay.png",
   },
 ];
 

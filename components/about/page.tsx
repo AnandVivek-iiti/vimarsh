@@ -24,8 +24,7 @@ export default function AboutSection() {
           engaging in seminars, workshops, and collaborative projects, IIT
           Indore aims to bridge the gap between academia and society, inspiring
           future researchers, supporting industry advancements, and
-          contributing to societal progress. The current composition of the
-          Seminar and Outreach Committee at IIT Indore is as follows:
+          contributing to societal progress. 
         </p>
 
         {/* Content Grid */}
