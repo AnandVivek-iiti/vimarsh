@@ -48,7 +48,7 @@ export default function EventsPage() {
       date: "28th March 2025",
       image: "/ForWebpage/H.C.Verma/HCV-copy.png",
       pdf: "/ForWebpage/H.C.Verma/HCV-copy.pdf",
-      video: "https://www.youtube.com",
+      video: "https://youtu.be/FlxMUqXpghQ?si=hicWyuhtloBCZXiD",
     },
     {
       id: 4,
