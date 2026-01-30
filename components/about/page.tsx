@@ -10,30 +10,40 @@ export default function AboutSection() {
         {/* Description */}
         <p className="text-m text-gray-800 leading-relaxed max-w-5xl mb-14">
           The Academic Outreach Initiatives at IIT Indore are designed to foster
-          impactful associations with the academic community and society,
-          promoting knowledge exchange and social responsibility. These
-          initiatives enable IIT Indore to share its scientific research with a
-          diverse audience, from students and academic peers to industry
-          professionals and the general public, while also incorporating
-          valuable feedback to refine research inquiries and methodologies. By
-          engaging in seminars, workshops, and collaborative projects, IIT
-          Indore aims to bridge the gap between academia and society, inspiring
-          future researchers, supporting industry advancements, and contributing
-          to societal progress.
+          meaningful engagement with the academic community and society at
+          large, promoting knowledge exchange and social responsibility. These
+          initiatives enable IIT Indore to disseminate its scientific research
+          to a diverse audience—including students, academic peers, industry
+          professionals, and the general public— while also incorporating
+          valuable feedback to refine research questions and methodologies.
+          <br></br>
+          <br></br>
+          Through seminars, workshops, and collaborative projects, IIT Indore
+          seeks to bridge the gap between academia and society by inspiring
+          future researchers, supporting industry innovation, and contributing
+          to broader societal progress. These objectives are pursued through the
+          Outreach Cell, functioning under the Institute Seminars and Outreach
+          Committee.
         </p>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Director Image */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-xl shadow-md p-4">
+            <div className="bg-white rounded-xl shadow-md p-4 text-center">
               <Image
                 src="/pics/People/director.png"
-                alt="Director IIT Indore"
-                width={280}
-                height={360}
-                className="rounded-lg object-cover"
+                alt="Prof. Suhas S. Joshi, Director IIT Indore"
+                width={400}
+                height={500}
+                className="rounded-lg object-cover mx-auto"
               />
+
+              {/* Director Name */}
+              <p className="mt-4 text-gray-800 text-lg font-medium italic">
+                Prof. Suhas S. Joshi
+              </p>
+              <p className="text-m text-gray-500">Director, IIT Indore</p>
             </div>
           </div>
 

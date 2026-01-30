@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Youtube, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import eventsData from "../../data/events.json";
 
 type Event = {
   id: number;
@@ -17,117 +18,7 @@ type Event = {
 };
 
 export default function EventsPage() {
-  const events: Event[] = [
-    {
-      id: 1,
-      speaker:
-        "Prof. Tanusri Saha-Dasgupta, FNA, FASc, FNASc, FTWAS, APS Fellow, J.C. Bose National Fellow, Director, S.N. Bose National Centre for Basic Sciences, Kolkata",
-      title: "Understanding Earth's Interior by Computation",
-      series: "The VIMARSH Institute Public Lectures series at IIT Indore",
-      date: "02nd February 2026",
-      image: "/ForWebpage/T.SahaDasgupta.png",
-      pdf: "/ForWebpage/earth-interior-computation.pdf",
-      video: "",
-    },
-    {
-      id: 2,
-      speaker:
-        "Dr. Swaminathan Kailas, FNA, FASc, Former Director, Physics Group, BARC, Mumbai, INSA Honorary Scientist & Hon. Professor, UM-DAE Centre for Excellence in Basic Sciences, Mumbai",
-      title: "Nuclear Science, Technology and Society",
-      series: "VIMARSH: Institute Public Lecture",
-      date: "16 January 2026",
-      image: "/ForWebpage/S.Kailas/S.Kailas.png",
-      pdf: "/ForWebpage/S.Kailas/S.Kailas.pdf",
-      video: "",
-    },
-     {
-      id: 3,
-      speaker: "Professor H.C. Verma, FNASc (Padma Shri Awardee)",
-      title: "My Educational Experiments",
-      series: "The VIMARSH Institute Public Lectures series at IIT Indore",
-      date: "28th March 2025",
-      image: "/ForWebpage/H.C.Verma/HCV-copy.png",
-      pdf: "/ForWebpage/H.C.Verma/HCV-copy.pdf",
-      video: "https://youtu.be/FlxMUqXpghQ?si=hicWyuhtloBCZXiD",
-    },
-    {
-      id: 4,
-      speaker:
-        " Prof. G. D. Yadav, FNA, FASc, FNASc, FTWAS, FNAE, Emeritus Professor of Eminence,  ICT Mumbai (Padma Shri Awardee)",
-      title: "Unlocking Success: Join us for an insightful Lecture!",
-      series: "VIMARSH - Institute Public Lecture",
-      date: "18th March, 2025",
-      image: "/ForWebpage/GD.Yadav/image.jpeg",
-      pdf: "/ForWebpage/GD.Yadav/image.jpeg",
-      video: "",
-    },
-
-    {
-      id: 5,
-      speaker:
-        "Dr. Rajesh S. Gokhale, Secretary, Department of Biotechnology (DBT), Government of India",
-      title: "Engineering Bharat's Bio-Vision",
-      series: "Institute Public Lecture - Vimarsh",
-      date: "February 17, 2025 (Monday)",
-      image: "/ForWebpage/RajeshGokhale/Flyer_Vimarsh_17022025.png",
-      pdf: "/ForWebpage/RajeshGokhale/iit_indore.pdf",
-      video: "",
-    },
-    {
-      id: 6,
-      speaker: "Dr. Kiran Seth, Founder of SPIC MCAY (Padma Shri Awardee)",
-      title:
-        "Save the Tiger and maybe the Rudra Veena: Indian Knowledge System in Modern Contexts.",
-      series: "The VIMARSH Institute Public Lectures series at IIT Indore",
-      date: "16th January 2025",
-      image: "/ForWebpage/spicmacay.png",
-      pdf: "/ForWebpage/spicmacay.png",
-      video: "https://www.youtube.com",
-    },
-    {
-      id: 7,
-      speaker: "Prof. Amit Roy, FNASc, Former Director, IUAC, New Delhi",
-      title: "Nuclear Technologies for Society",
-      series: "The VIMARSH Institute Public Lectures series at IIT Indore",
-      date: "6th November 2024",
-      image: "/ForWebpage/AmitRoy/AmitRoy-Flyer.png",
-      pdf: "/ForWebpage/AmitRoy/l1pdf.pdf",
-      video: "https://www.youtube.com",
-    },
-    {
-      id: 8,
-      speaker:
-        "Prof. Jemmis Eluvathingal Devassy, FNA, FASc, FNASc, FTWAS, IISc Bangalore (Padma Shri Awardee)",
-      title: "Inquisitive Minds and Innovative Questions",
-      series: "The VIMARSH Institute Public Lectures series at IIT Indore",
-      date: "29th August 2024",
-      image: "/ForWebpage/Jemmis/Lecture_poster.png",
-      pdf: "/ForWebpage/Jemmis/Lecture_ppt.docx",
-      video: "https://www.youtube.com",
-    },
-    {
-      id: 9,
-      speaker:
-        "Prof. Indranil Manna, FNAE, FNA, FASc, FNASc, FTWAS, Vice Chancellor, BIT Mesra",
-      title:
-        "Science–Engineering–Technology Synergy Needed for Technological Self-Reliance",
-      series: "The VIMARSH Institute Public Lectures series at IIT Indore",
-      date: "20th March 2023",
-      image: "/ForWebpage/I.Manna/Lecture_poster.jpg",
-      pdf: "/ForWebpage/I.Manna/Lecture_notes.pdf",
-      video: "https://www.youtube.com",
-    },
-    {
-      id: 10,
-      speaker: "Prof. Subhasis Chaudhuri, FNAE, FNA, FASc, FNASc, Director, IIT Bombay",
-      title: "Students' interaction with an eminent researcher",
-      series: "Institute Colloquium",
-      date: "February 3, 2023",
-      image: "/ForWebpage/IITB/image.png",
-      pdf: "Prof-SubhasisChaudhuri.pdf",
-      video: "",
-    },
-  ];
+  const events: Event[] = eventsData;
 
   return (
     <main className="bg-gray-50 min-h-screen py-12 px-4">
@@ -192,7 +83,6 @@ function EventCard({ event }: { event: Event }) {
           </button>
         </div>
 
-        {/* BACK SIDE (Details) */}
         <div
           className={`absolute inset-0 w-full h-full md:relative md:flex-grow flex flex-col justify-center p-8 bg-white rounded-xl border-2 border-black md:border-none md:p-0 [backface-visibility:hidden]
           ${isMobile ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}`}
@@ -237,13 +127,23 @@ function EventCard({ event }: { event: Event }) {
               </div>
             </div>
 
-            {/* Back to Poster Button (Mobile Only) */}
-            <button
+            <motion.button
               onClick={() => setIsFlipped(false)}
-              className="md:hidden mt-auto pt-8 text-black font-bold underline flex items-center justify-center gap-2"
+              className="md:hidden mt-auto pt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg flex items-center justify-center gap-2 overflow-hidden relative group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              ← Back to Poster
-            </button>
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <motion.span
+                className="relative z-10"
+                animate={{ x: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                ←
+              </motion.span>
+              <span className="relative z-10">Back to Poster</span>
+            </motion.button>
           </div>
         </div>
       </motion.div>

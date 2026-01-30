@@ -1,36 +1,6 @@
 import { Linkedin, Mail, Globe } from "lucide-react";
 import Image from "next/image";
-
-const teamMembers = [
-  {
-    name: "Prof. Raghunath Sahoo",
-    role: "Convenor",
-    dept: "Institute Chair Professor, Department of Physics",
-    email: "raghunath@iiti.ac.in",
-    image: "/pics/People/Raghunath.png",
-  },
-  {
-    name: "Dr. Priyansh Singh",
-    role: "Member",
-    dept: "Assistant Professor, Department of Civil Engineering",
-    email: "priyansh@iiti.ac.in",
-    image: "/pics/People/Priyansh.png",
-  },
-  {
-    name: "Dr. Kalandi C Pradhan",
-    role: "Member",
-    dept: "Assistant Professor, School of Humanities and Social Sciences",
-    email: "kcpradhan@iiti.ac.in",
-    image: "/pics/People/kalandi.png",
-  },
-  {
-    name: " Mr. Tanmay Harsh Vaishnav (AR Administration)",
-    role: "Member",
-    dept: "Outreach Office",
-    email: "aradmin[at]iiti.ac.in",
-    image: "/pics/People/Tanmay.png",
-  },
-];
+import teamMembers from "../../data/People.json";
 
 export default function TeamPage() {
   return (
@@ -54,30 +24,39 @@ export default function TeamPage() {
                 className="mx-auto rounded-md object-cover"
               />
 
-              <h3 className="mt-4 font-semibold text-lg text-gray-900">{member.name}</h3>
+              <h3 className="mt-4 font-semibold text-lg text-gray-900">
+                {member.name}
+              </h3>
 
-              <p className="text-m text-gray-600">{member.role}</p>
-
-              <p className="text-s text-gray-500 mt-2">{member.dept}</p>
-
-
+              <p className="text-sm text-gray-600">{member.role}</p>
+              <p className="text-sm text-gray-500 mt-2">{member.dept}</p>
 
               {/* Social Icons */}
               <div className="flex justify-center gap-3 mt-4">
-                <a
-                  href="#"
-                  className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
-                  aria-label="Website"
-                >
-                  <Globe className="w-4 h-4 text-white" />
-                </a>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-4 h-4 text-white" />
+                  </a>
+                )}
+
+                {member.website && (
+                  <a
+                    href={member.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"
+                    aria-label="Website"
+                  >
+                    <Globe className="w-4 h-4 text-white" />
+                  </a>
+                )}
+
                 <a
                   href={`mailto:${member.email}`}
                   className="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-gray-700 transition"

@@ -1,57 +1,6 @@
 import Image from "next/image";
 import { Linkedin, Mail, Instagram } from "lucide-react";
-const teamMembers = [
-  {
-    name: "Kavyansh Raj Singh",
-    role: "Outreach",
-    email: "che240008014@iiti.ac.in",
-    linkedin: "https://www.linkedin.com/in/kavyanshsingh/",
-    instagram: "https://www.instagram.com/real_kavyansh/",
-    image: "/pics/Team/Kavyansh.jpeg",
-  },
-  {
-    name: "Anand Vivek",
-    role: "Web Dev",
-    email: "me240003006@iiti.ac.in",
-    linkedin: "https://www.linkedin.com/in/anandvivek1223/",
-    instagram: "https://www.instagram.com/anandvivek1223/",
-    image: "/pics/Team/AnandVivek.jpg",
-  },
-  {
-    name: "Shruti Turare",
-    role: "Creatives",
-    email: "che240008029@iiti.ac.in",
-    linkedin: "https://in.linkedin.com/in/shruti-turare-a5184a286",
-    instagram: "https://www.instagram.com/3.shrutea/",
-    image: "/pics/Team/Shruti.jpg",
-  },
-  {
-    name: "Samarth Dhanuka",
-    role: "Social Media",
-    email: "che240008011@iiti.ac.in",
-    linkedin: "https://linkedin.com/in/dhanuka-samarth",
-    instagram: "https://www.instagram.com/chat_with_sam_07",
-    image: "/pics/Team/Samarth.jpg",
-  },
-  {
-    name: "Abhishek Nigam",
-    role: "OPNL",
-    email: "che240008001@iiti.ac.in",
-    linkedin:
-      "https://www.linkedin.com/in/abhisheknigam8001",
-    instagram:
-      "https://www.instagram.com/abhisheknigam1251",
-    image: "/pics/Team/Abhishek.webp",
-  },
-  {
-    name: "Jayshil Mendhe",
-    role: "Outreach",
-    email: "che240008013@iiti.ac.in",
-    linkedin: "https://www.linkedin.com/in/jayshilmendhe",
-    instagram: "https://www.instagram.com/jayshilmendhe/",
-    image: "/pics/Team/jayshil.JPG",
-  },
-];
+import teamMembers from "../../data/TeamMembers.json";
 
 export default function TeamPage() {
   return (
@@ -76,7 +25,6 @@ export default function TeamPage() {
                   <div className="w-full h-full rounded-full overflow-hidden bg-white">
                     <Image
                       src={member.image}
-
                       alt={member.name}
                       width={100}
                       height={100}
@@ -111,8 +59,7 @@ export default function TeamPage() {
                 </a>
 
                 <a
-                 href={member.instagram}
-
+                  href={member.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-11 h-11 flex items-center justify-center bg-red-500 rounded-full hover:bg-red-700 transition-all duration-300 hover:scale-110 shadow-md"

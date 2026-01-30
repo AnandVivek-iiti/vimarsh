@@ -4,7 +4,7 @@ import EventsPage from "@/components/events/page";
 import PeoplePage from "@/components/People/page";
 import TeamPage from "@/components/Team/page";
 import DepartmentalOutreachPage from "@/components/departmental-outreach/page";
-
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -37,6 +37,8 @@ export default function Home() {
       <section id="team">
         <TeamPage />
       </section>
+      {/* FOOTER */}
+      <Footer />
     </main>
   );
 }
