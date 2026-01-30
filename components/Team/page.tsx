@@ -41,7 +41,7 @@ const teamMembers = [
       "https://www.linkedin.com/in/abhisheknigam8001",
     instagram:
       "https://www.instagram.com/abhisheknigam1251",
-    image: "/pics/Team/Abhishek.png",
+    image: "/pics/Team/Abhishek.webp",
   },
   {
     name: "Jayshil Mendhe",
