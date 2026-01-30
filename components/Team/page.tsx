@@ -45,7 +45,7 @@ const teamMembers = [
   },
   {
     name: "Jayshil Mendhe",
-    role: "Marketing",
+    role: "Outreach",
     email: "che240008013@iiti.ac.in",
     linkedin: "https://linkedin.com/in/jayshilmendhe",
     instagram: "https://www.instagram.com/jayshilmendhe/",
