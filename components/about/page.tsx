@@ -2,15 +2,10 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="w-full bg-[#e6eaef] py-20 px-6"
-    >
+    <section id="about" className="w-full bg-[#e6eaef] py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-          About
-        </h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-6">About</h2>
 
         {/* Description */}
         <p className="text-m text-gray-800 leading-relaxed max-w-5xl mb-14">
@@ -23,8 +18,8 @@ export default function AboutSection() {
           valuable feedback to refine research inquiries and methodologies. By
           engaging in seminars, workshops, and collaborative projects, IIT
           Indore aims to bridge the gap between academia and society, inspiring
-          future researchers, supporting industry advancements, and
-          contributing to societal progress. 
+          future researchers, supporting industry advancements, and contributing
+          to societal progress.
         </p>
 
         {/* Content Grid */}
@@ -49,29 +44,39 @@ export default function AboutSection() {
             </h3>
 
             <p className="text-sm text-gray-700 leading-relaxed">
-              Indian Institute of Technology Indore (IIT Indore), established in
-              2009 as a second-generation IIT in Indore, India, is renowned for
-              its excellence in education and research. Offering a diverse
-              array of programs, the institution&apos;s hallmark is its
-              rigorous curriculum which blends theory and practice and strongly
-              emphasizes research and innovation.
+              Established in 2009, the Indian Institute of Technology Indore has
+              steadily grown into a centre of excellence in education, research,
+              and innovation, with a strong emphasis on engagement beyond
+              institutional boundaries. As a second-generation IIT, the
+              Institute was envisioned to serve not only as a hub of advanced
+              learning but also as a conduit for knowledge dissemination and
+              societal outreach.
               <br />
               <br />
-              IIT Indore maintains a strong global presence, having established
-              over 100 MoUs worldwide and securing more than 35 bilateral
-              research grants with foreign institutes. IIT Indore has around
-              210 Faculty members, including experienced senior members from
-              established IITs and young, vibrant scholars with global academic
-              backgrounds, many of whom are listed among the top 2% of
-              scientists in the world.
+              Interdisciplinarity lies at the core of IIT Indore’s academic and
+              research philosophy. By fostering collaboration across
+              engineering, sciences, and the humanities, the Institute
+              encourages the exchange of ideas that address complex societal and
+              technological challenges. This integrative culture enables
+              meaningful dialogue between academia, industry, and the wider
+              public.
               <br />
               <br />
-              Additionally, a mega project worth Rs 100 Cr under the DST
-              National Mission on Cyber-Physical Systems is dedicated to
-              developing cutting-edge technologies and training a skilled
-              workforce in this domain. This project stands as a testament to
-              IIT Indore&apos;s commitment to fostering advancements in critical
-              technological spheres.
+              With a dedicated faculty body of over 210 members, including
+              internationally recognised scholars, IIT Indore actively
+              contributes to national and global research ecosystems. Our
+              extensive network of international collaborations further enhances
+              academic exchange and outreach, strengthening the Institute’s
+              global footprint.
+              <br />
+              <br />
+              The Institute’s involvement in major national initiatives,
+              including the ₹100 crore project under the DST National Mission on
+              Cyber-Physical Systems, reflects its commitment to advancing
+              frontier technologies while nurturing skilled human resources.
+              Through its outreach initiatives, IIT Indore remains committed to
+              sharing knowledge, inspiring young minds, and fostering a culture
+              of curiosity, innovation, and social responsibility.
             </p>
           </div>
         </div>
