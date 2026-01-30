@@ -60,9 +60,6 @@ export default function HomePage() {
             </p>
           </div>
 
-          
-
-
           {/* Right Logo */}
           <div className="flex-shrink-0">
             <Image
@@ -163,13 +160,12 @@ export default function HomePage() {
             </nav>
           </div>
         </section>
-       {isMobileMenuOpen && (
-  <div
-    className="fixed inset-0 bg-black/20 z-40 lg:hidden"
-    onClick={() => setIsMobileMenuOpen(false)}
-  />
-)}
-
+        {isMobileMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
       </main>
     </div>
   );

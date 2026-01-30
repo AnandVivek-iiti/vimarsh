@@ -41,7 +41,6 @@ function EventCard({ event }: { event: Event }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check screen size to disable flip on desktop
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);

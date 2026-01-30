@@ -13,8 +13,6 @@ export default function Home() {
       <section id="home">
         <HomePage />
       </section>
-
-{/* <HomePageImage/> */}
       {/* ABOUT */}
       <section id="about">
         <AboutSection />
