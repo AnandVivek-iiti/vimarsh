@@ -34,7 +34,7 @@ export default function AboutSection() {
           <div className="flex justify-center">
             <div className="bg-white rounded-xl shadow-md p-4">
               <Image
-                src="/pics/director.png"
+                src="/pics/People/director.png"
                 alt="Director IIT Indore"
                 width={280}
                 height={360}

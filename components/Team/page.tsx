@@ -1,48 +1,55 @@
 import Image from "next/image";
 import { Linkedin, Mail, Instagram } from "lucide-react";
-
 const teamMembers = [
   {
-    name: "Kavyansh",
+    name: "Kavyansh Raj Singh",
     role: "Outreach",
-    email: "kavyansh@example.com",
-    linkedin: "#",
-    Instagram: "#",
+    email: "che240008014@iiti.ac.in",
+    linkedin: "https://www.linkedin.com/in/kavyanshsingh/",
+    instagram: "https://www.instagram.com/real_kavyansh/",
+    image: "/pics/Team/Kavyansh.jpeg",
   },
   {
     name: "Anand Vivek",
     role: "Web Dev",
-    email: "anand@example.com",
-    linkedin: "#",
-    Instagram: "#",
+    email: "me240003006@iiti.ac.in",
+    linkedin: "https://www.linkedin.com/in/anandvivek1223/",
+    instagram: "https://www.instagram.com/anandvivek1223/",
+    image: "/pics/Team/Anand-Vivek.jpg",
   },
   {
-    name: "Shruti",
+    name: "Shruti Turare",
     role: "Creatives",
-    email: "shruti@example.com",
-    linkedin: "#",
-    Instagram: "#",
+    email: "che240008029@iiti.ac.in",
+    linkedin: "https://in.linkedin.com/in/shruti-turare-a5184a286",
+    instagram: "https://www.instagram.com/3.shrutea/",
+    image: "/pics/Team/Shruti.jpg",
   },
   {
-    name: "Samarth",
+    name: "Samarth Dhanuka",
     role: "Social Media",
-    email: "samarth@example.com",
-    linkedin: "#",
-    Instagram: "#",
+    email: "che240008011@iiti.ac.in",
+    linkedin: "https://linkedin.com/in/dhanuka-samarth",
+    instagram: "https://www.instagram.com/chat_with_sam_07",
+    image: "/pics/Team/Samarth.jpg",
   },
   {
-    name: "Abhishek",
+    name: "Abhishek Nigam",
     role: "OPNL",
-    email: "abhishek@example.com",
-    linkedin: "#",
-    Instagram: "#",
+    email: "che240008001@iiti.ac.in",
+    linkedin:
+      "https://www.linkedin.com/in/abhisheknigam8001",
+    instagram:
+      "https://www.instagram.com/abhisheknigam1251",
+    image: "/pics/Team/Abhishek.png",
   },
   {
-    name: "Jayshil",
+    name: "Jayshil Mendhe",
     role: "Marketing",
-    email: "jayshil@example.com",
-    linkedin: "#",
-    Instagram: "#",
+    email: "che240008013@iiti.ac.in",
+    linkedin: "https://linkedin.com/in/jayshilmendhe",
+    instagram: "https://www.instagram.com/jayshilmendhe/",
+    image: "/pics/Team/jayshil.JPG",
   },
 ];
 
@@ -68,7 +75,8 @@ export default function TeamPage() {
                 <div className="w-55 h-60 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white">
                     <Image
-                      src="/pics/placeholder.png"
+                      src={member.image}
+
                       alt={member.name}
                       width={100}
                       height={100}
@@ -103,7 +111,8 @@ export default function TeamPage() {
                 </a>
 
                 <a
-                  href={member.Instagram}
+                 href={member.instagram}
+
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-11 h-11 flex items-center justify-center bg-red-500 rounded-full hover:bg-red-700 transition-all duration-300 hover:scale-110 shadow-md"

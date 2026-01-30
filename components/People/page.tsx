@@ -7,21 +7,21 @@ const teamMembers = [
     role: "Convenor",
     dept: "Professor, Department of Physics",
     email: "raghunath@iiti.ac.in",
-    image: "/pics/image.png",
+    image: "/pics/People/Raghunath.png",
   },
   {
     name: "Dr. Priyansh Singh",
     role: "Member",
     dept: "Assistant Professor, Department of Civil Engineering",
     email: "priyansh@iiti.ac.in",
-    image: "/pics/placeholder.png",
+    image: "/pics/People/Priyansh.png",
   },
   {
-    name: "Dr. Kalandri C Pradhan",
+    name: "Dr. Kalandi C Pradhan",
     role: "Member",
     dept: "Assistant Professor, Humanities and Social Sciences",
     email: "kcpradhan@iiti.ac.in",
-    image: "/pics/placeholder.png",
+    image: "/pics/People/Kalandi.png",
   },
   {
     name: "DR Administration",
@@ -54,13 +54,13 @@ export default function TeamPage() {
                 className="mx-auto rounded-md object-cover"
               />
 
-              <h3 className="mt-4 font-medium text-gray-900">{member.name}</h3>
+              <h3 className="mt-4 font-medium text-lg text-gray-900">{member.name}</h3>
 
-              <p className="text-sm text-gray-600">{member.role}</p>
+              <p className="text-m text-gray-600">{member.role}</p>
 
               <p className="text-xs text-gray-500 mt-2">{member.dept}</p>
 
-            
+
 
               {/* Social Icons */}
               <div className="flex justify-center gap-3 mt-4">

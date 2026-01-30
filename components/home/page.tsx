@@ -102,28 +102,28 @@ export default function HomePage() {
         <section className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/pics/Home.png"
+              src="/pics/Home2.png"
               alt="IIT Indore Abhinandan Bhavan"
               fill
               priority
-              className="object-cover sm:object-contain object-center w-full h-full"
+              className="object-cover sm:object-cover object-center w-full h-full"
               sizes="100vw"
             />
             <div className="absolute inset-0" />
           </div>
 
           {/* Desktop Sidebar Navigation */}
-          <div className="hidden lg:block absolute left-0 top-0 h-full z-30">
-            <nav className="bg-white/95 backdrop-blur-sm shadow-2xl h-full w-64 border-r border-gray-200">
-              <ul className="flex flex-col py-4 pointer-cursor">
+          <div className="hidden lg:block absolute right-0 top-0 h-full z-30">
+            <nav className="  shadow-sm h-full w-164 ">
+              <ul className="flex flex-row py-4 pointer-cursor">
                 {navItems.map((item) => (
                   <li key={item.id} className="group">
                     <button
                       onClick={() => handleScroll(item.id)}
-                      className={`w-full text-left px-6 py-4 font-semibold transition-all cursor-pointer duration-300 ease-in-out border-l-4 ${
+                      className={`w-full text-left px-6 py-4 font-semibold transition-all cursor-pointer duration-300 ease-in-out  ${
                         activeSection === item.id
-                          ? "bg-blue-50 text-blue-700 border-blue-600"
-                          : "text-gray-700 border-transparent hover:bg-gray-50 hover:border-gray-300"
+                          ? " text-blue-700 border-blue-600"
+                          : "text-gray-700  hover:bg-gray-50 hover:border-gray-100"
                       }`}
                     >
                       <span>{item.label}</span>
@@ -136,7 +136,7 @@ export default function HomePage() {
 
           {/* Mobile Navigation Dropdown */}
           <div
-            className={`lg:hidden fixed top-28 right-0 h-[calc(100vh-80px)] w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out ${
+            className={`lg:hidden fixed top-26 right-0 h-[calc(100vh-80px)] w-64 bg-gray-100 shadow-xl z-50 transition-transform duration-300 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
