@@ -1,89 +1,77 @@
-import { Mail, Youtube, Globe } from "lucide-react";
+"use client";
 
-const faculty = [
-  {
-    name: "Prof. Raghunath Sahoo",
-    linkedin: "https://www.linkedin.com/in/raghunath-sahoo-0464971a4/",
-  },
-  {
-    name: "Dr. Priyansh Singh",
-    linkedin: "https://www.linkedin.com/in/catchpriyansh/",
-  },
-  {
-    name: "Dr. Kalandi C Pradhan",
-    linkedin:
-      "https://www.linkedin.com/in/dr-kalandi-charan-pradhan-570ba3203/",
-  },
-  {
-    name: "Mr. Tanmay Harsh   (AR Administration)",
-    linkedin: "https://www.linkedin.com/in/tanmay-vaishnav-9a180673/",
-  }
-];
+import { Mail, Globe, Youtube } from "lucide-react";
+import { motion } from "framer-motion";
+import footerData from "@/data/footer.json";
+import type { Variants } from "framer-motion";
+type Person = {
+  name: string;
+  linkedin: string;
+};
 
-const students = [
-  {
-    name: "Kavyansh Raj Singh",
-    linkedin: "https://www.linkedin.com/in/kavyanshsingh/",
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
   },
-  {
-    name: "Anand Vivek",
-    linkedin: "https://www.linkedin.com/in/anandvivek1223/",
+};
+
+
+const item: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
   },
-  {
-    name: "Shruti Turare",
-    linkedin: "https://in.linkedin.com/in/shruti-turare-a5184a286",
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
   },
-  {
-    name: "Samarth Dhanuka",
-    linkedin: "https://linkedin.com/in/dhanuka-samarth",
-  },
-  {
-    name: "Abhishek Nigam",
-    linkedin: "https://www.linkedin.com/in/abhisheknigam8001",
-  },
-  {
-    name: "Jayshil Mendhe",
-    linkedin: "https://www.linkedin.com/in/jayshilmendhe",
-  },
-  {
-    name: "Rishabh Tiwari",
-    linkedin: "https://www.linkedin.com/in/rishabh-tiwari-6e9k4r2f0/",
-  },
-];
+};
 
 export default function Footer() {
-  return (
-    <footer className="bg-gray-900 text-gray-300 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Column 1: Identity */}
-        <div>
-          <h3 className="text-xl font-semibold text-white mb-3">
-            Outreach Cell
-          </h3>
-          <p className="text-sm leading-relaxed">
-            Institute Seminars and Outreach Committee
-            <br />
-            Indian Institute of Technology Indore
-          </p>
-        </div>
+  const { identity, contact, faculty, students } = footerData;
 
-        {/* Column 2: Contact */}
-        <div>
-          <h4 className="text-lg font-semibold text-white mb-3">Contact</h4>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2">
+  return (
+    <footer className="relative bg-gradient-to-b from-gray-950 to-gray-900 text-gray-300 mt-24">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        {/* Identity */}
+        <motion.div variants={item}>
+          <h3 className="text-2xl font-semibold text-white mb-3">
+            {identity.title}
+          </h3>
+          <p className="text-sm leading-relaxed text-gray-400">
+            {identity.subtitle}
+            <br />
+            {identity.institute}
+          </p>
+        </motion.div>
+
+        {/* Contact */}
+        <motion.div variants={item}>
+          <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-center gap-3 hover:text-white transition">
               <Mail className="w-4 h-4" />
-              <a
-                href="mailto:outreachcell@iiti.ac.in"
-                className="hover:underline"
-              >
-                outreachcell@iiti.ac.in
+              <a href={`mailto:${contact.email}`} className="hover:underline">
+                {contact.email}
               </a>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-3 hover:text-white transition">
               <Globe className="w-4 h-4" />
               <a
-                href="https://vimarsh-iiti.onrender.com/"
+                href={contact.website}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
@@ -91,10 +79,10 @@ export default function Footer() {
                 vimarsh-iiti.onrender.com
               </a>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-3 hover:text-white transition">
               <Youtube className="w-4 h-4" />
               <a
-                href="https://www.youtube.com/@OutreachCell-iiti"
+                href={contact.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
@@ -103,52 +91,77 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Column 3: Faculty */}
-        <div>
-          <h4 className="text-lg font-semibold text-white mb-3">Faculty</h4>
-          <ul className="text-sm space-y-1">
-            {faculty.map((person) => (
+        {/* Faculty */}
+        <motion.div variants={item}>
+          <h4 className="text-lg font-semibold text-white mb-4">Faculty</h4>
+          <ul className="text-sm space-y-2">
+            {(faculty as Person[]).map((person) => (
               <li key={person.name}>
                 <a
                   href={person.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline"
+                  className="hover:text-white hover:underline transition"
                 >
                   {person.name}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Column 4: Student Team */}
-        <div>
-          <h4 className="text-lg font-semibold text-white mb-3">
+        {/* Students */}
+        <motion.div variants={item}>
+          <h4 className="text-lg font-semibold text-white mb-4">
             Student Team
           </h4>
-          <ul className="text-sm space-y-1">
-            {students.map((person) => (
+          <ul className="text-sm space-y-2">
+            {(students as Person[]).map((person) => (
               <li key={person.name}>
                 <a
                   href={person.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline"
+                  className="hover:text-white hover:underline transition"
                 >
                   {person.name}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="border-t border-gray-700 py-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Outreach Cell, IIT Indore
-      </div>
+      {/* Divider */}
+      <div className="border-t border-gray-800 mx-6" />
+
+      {/* Bottom Bar */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <p className="text-sm text-gray-400 text-center sm:text-left">
+          Developed with ♡ by
+          <a
+            href="https://www.linkedin.com/in/anandvivek1223/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 text-gray-300 hover:text-blue-400 font-medium transition"
+          >
+            Anand Vivek
+          </a>
+        </p>
+
+        <p className="text-sm text-gray-500 text-center sm:text-right">
+          © {new Date().getFullYear()} Outreach Cell, IIT Indore. All rights
+          reserved.
+        </p>
+      </motion.div>
     </footer>
   );
 }

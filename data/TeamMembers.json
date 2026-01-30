@@ -50,9 +50,17 @@
   {
     "name": "Rishabh Tiwari",
     "role": "Outreach",
-    "emails": ["Rishabhtiwari16t@gmail.com", "msc2403151019@iiti.ac.in"],
+    "emails": "msc2403151019@iiti.ac.in",
     "linkedin": "https://www.linkedin.com/in/rishabh-tiwari-6e9k4r2f0/",
     "instagram": "https://www.instagram.com/rishabh_tiwari02",
     "image": "/pics/Team/Rishabh.jpeg"
+  },
+  {
+    "name": "Arpita Chhimpa",
+    "role": "Outreach",
+    "emails": "arpitachhimpa@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/arpita-chhimpa-200170358",
+    "instagram": "https://www.instagram.com/arpita_chhimpa",
+    "image": "/pics/Team/Arpita.jpeg"
   }
 ]
