@@ -18,8 +18,7 @@ type Event = {
 };
 
 export default function EventsPage() {
-  const events: Event[] = eventsData;
-
+ const events: Event[] = [...eventsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return (
     <main className="bg-gray-50 min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">

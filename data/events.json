@@ -1,26 +1,36 @@
 [
+{
+  "id": 12,
+  "speaker": "Prof. Anil Bhardwaj, FNA, FASc, FNASc, J.C. Bose Fellow, AOGS Fellow Academician, International Academy of Astronautics, Director, PRL",
+  "title": "India going to the Moon",
+  "series": "Institute Public Lecture - VIMARSH",
+  "date": "March 23, 2026",
+  "image": "/ForWebpage/AnilBhardwaj/poster.png",
+  "pdf": "/ForWebpage/AnilBhardwaj/poster.png",
+  "video": "https://www.youtube.com/@OutreachCell-iiti"
+},
   {
-  "id": 1,
+  "id": 11,
   "speaker": "Prof. Debasish Ghose, FNAE, FNASc, FNA, Hon. Professor, Department of Aerospace Engineering, Indian Institute of Science, Bangalore",
   "title": "Collaborative Autonomous Systems",
   "series": "VIMARSH Institute Public Lecture",
   "date": "March 16, 2026",
   "image": "/ForWebpage/D.Ghose/D.Ghose.jpeg",
   "pdf": "/ForWebpage/D.Ghose/2026-IITIndore-Prof.D.Ghose.pdf",
-  "video": "https://www.youtube.com/@OutreachCell-iiti"
+  "video": "https://www.youtube.com/watch?v=4MkczTqOSL8"
 },
   {
-    "id": 2,
+    "id": 10,
     "speaker": "Prof. Tanusri Saha-Dasgupta, FNA, FASc, FNASc, FTWAS, APS Fellow, J.C. Bose National Fellow, Director, S.N. Bose National Centre for Basic Sciences, Kolkata",
     "title": "Understanding Earth's Interior by Computation",
     "series": "Institute Public Lecture - VIMARSH",
     "date": "February 2, 2026",
     "image": "/ForWebpage/T.SahaDasgupta.png",
     "pdf": "/ForWebpage/earth-interior-computation.pdf",
-    "video": "https://www.youtube.com/@OutreachCell-iiti"
+    "video": "https://www.youtube.com/watch?v=1gGOitqoAE8&t=4s"
   },
   {
-    "id": 3,
+    "id": 9,
     "speaker": "Dr. Swaminathan Kailas, FNA, FASc, Former Director, Physics Group, BARC, Mumbai, INSA Honorary Scientist & Hon. Professor, UM-DAE Centre for Excellence in Basic Sciences, Mumbai",
     "title": "Nuclear Science, Technology and Society",
     "series": "Institute Public Lecture - VIMARSH",
@@ -30,7 +40,7 @@
     "video": "https://youtu.be/K4PQWwWkc2g?si=Jj_4glfp3G4795M6"
   },
   {
-    "id": 4,
+    "id": 8,
     "speaker": "Professor H.C. Verma, FNASc (Padma Shri Awardee)",
     "title": "My Educational Experiments",
     "series": "Institute Public Lecture - VIMARSH",
@@ -40,7 +50,7 @@
     "video": "https://youtu.be/FlxMUqXpghQ?si=hicWyuhtloBCZXiD"
   },
   {
-    "id": 5,
+    "id": 7,
     "speaker": "Prof. G. D. Yadav, FNA, FASc, FNASc, FTWAS, FNAE, Emeritus Professor of Eminence, ICT Mumbai (Padma Shri Awardee)",
     "title": "Unlocking Success: Join us for an insightful Lecture!",
     "series": "Institute Public Lecture - VIMARSH",
@@ -60,7 +70,7 @@
     "video": "https://www.youtube.com/@OutreachCell-iiti"
   },
   {
-    "id": 7,
+    "id": 5,
     "speaker": "Dr. Kiran Seth, Founder of SPIC MCAY (Padma Shri Awardee)",
     "title": "Save the Tiger and maybe the Rudra Veena: Indian Knowledge System in Modern Contexts.",
     "series": "Institute Public Lecture - VIMARSH",
@@ -70,7 +80,7 @@
     "video": "https://www.youtube.com/@OutreachCell-iiti"
   },
   {
-    "id": 8,
+    "id": 4,
     "speaker": "Prof. Amit Roy, FNASc, Former Director, IUAC, New Delhi",
     "title": "Nuclear Technologies for Society",
     "series": "Institute Public Lecture - VIMARSH",
@@ -80,7 +90,7 @@
     "video": "https://www.youtube.com/@OutreachCell-iiti"
   },
   {
-    "id": 9,
+    "id": 3,
     "speaker": "Prof. Jemmis Eluvathingal Devassy, FNA, FASc, FNASc, FTWAS, IISc Bangalore (Padma Shri Awardee)",
     "title": "Inquisitive Minds and Innovative Questions",
     "series": "Institute Public Lecture - VIMARSH",
@@ -90,7 +100,7 @@
     "video": "https://www.youtube.com/@OutreachCell-iiti"
   },
   {
-    "id": 10,
+    "id": 2,
     "speaker": "Prof. Indranil Manna, FNAE, FNA, FASc, FNASc, FTWAS, Vice Chancellor, BIT Mesra",
     "title": "Science–Engineering–Technology Synergy Needed for Technological Self-Reliance",
     "series": "Institute Public Lecture - VIMARSH",
@@ -100,7 +110,7 @@
     "video": "https://www.youtube.com/@OutreachCell-iiti"
   },
   {
-    "id": 11,
+    "id": 1,
     "speaker": "Prof. Subhasis Chaudhuri, FNAE, FNA, FASc, FNASc, Director, IIT Bombay",
     "title": "Students' interaction with an eminent researcher",
     "series": "Institute Colloquium",
